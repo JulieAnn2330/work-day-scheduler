@@ -77,10 +77,10 @@ textarea{
   box-sizing: border-box;
 }
 
-body {
+/* body {
   font-family: "Concert One", cursive;
   font-size: 16px;
-}
+} */
 
 input {
   height: 50px;
