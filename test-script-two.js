@@ -13,8 +13,6 @@ var datepicker = new ej.calendars.DatePicker({ width: "255px" });
 
 datepicker.appendTo('#datepicker');
 
-
-
 $(document).ready( function() {
     colorChange ();
     renderText();
@@ -53,6 +51,9 @@ $(".completeBtn").click(function() {
     console.log(eventTime);
     localStorage.setItem(eventTime, JSON.stringify(eventText));
 
+    // colorChange ();
+    // renderText ();
+
    });
 
 $(".saveBtn").click(function() {
@@ -61,6 +62,10 @@ $(".saveBtn").click(function() {
     eventTime = $(this).siblings(".hour").text();
     console.log(eventTime);
     localStorage.setItem(eventTime, JSON.stringify(eventText));
+
+    // colorChange ();
+    // renderText ();
+    
 });
 
     $(".deleteBtn").click(function() {
@@ -68,7 +73,6 @@ $(".saveBtn").click(function() {
         eventText = $(this).siblings(".input").val();
         eventTime = $(this).siblings(".hour").text();
         localStorage.setItem(eventTime, JSON.stringify(eventText));
-
   
     colorChange ();
     renderText ();
@@ -76,7 +80,11 @@ $(".saveBtn").click(function() {
 });
 
     // Enter and Display Events
-function renderText () {
+function renderText () {   
+    var saveEventText8 = JSON.parse(localStorage.getItem("8:00 am"));
+    $("#8").val("");
+    $("#8").val(saveEventText8);
+
     var saveEventText9 = JSON.parse(localStorage.getItem("9:00 am"));
     $("#9").val("");
     $("#9").val(saveEventText9);
@@ -113,4 +121,16 @@ function renderText () {
     $("#17").val("");
     $("#17").val(saveEventText5);
 
-}
+    var saveEventText6 = JSON.parse(localStorage.getItem("6:00 pm"));
+    $("#18").val("");
+    $("#18").val(saveEventText6);
+
+    var saveEventText7 = JSON.parse(localStorage.getItem("7:00 pm"));
+    $("#19").val("");
+    $("#19").val(saveEventText7);
+
+    var saveEventText8P = JSON.parse(localStorage.getItem("8:00 pm"));
+    $("#20").val("");
+    $("#20").val(saveEventText8P);
+
+};
