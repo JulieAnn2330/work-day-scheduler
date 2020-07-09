@@ -1,82 +1,136 @@
-var todoInput = document.querySelector("#todo-text");
-var todoForm = document.querySelector("#todo-form");
-var todoList = document.querySelector("#todo-list");
-var todoCountSpan = document.querySelector("#todo-count");
-var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
+// Moment script
+var m = moment();
 
-renderTodos();
-function renderTodos() {
-  // Clear todoList element and update todoCountSpan
-  todoList.innerHTML = "";
-  todoCountSpan.textContent = todos.length;
+// variables for on save button click 
+var eventText;
+var eventTime;
 
-  // Render a new li for each todo
-  for (var i = 0; i < todos.length; i++) {
-    var todo = todos[i];
+// Day, date, time
+$("#currentDay").text(moment().format('LLLL'));
 
-    var li = document.createElement("li");
-    li.textContent = todo;
-    todoList.appendChild(li);
+// Change date
+var datepicker = new ej.calendars.DatePicker({ width: "255px" });
+
+datepicker.appendTo('#datepicker');
+
+$(document).ready( function() {
+    colorChange ();
+    renderText();
+});
+
+function colorChange () {
+    
+    var currentTime = moment().hours();
+    console.log("Current Time" + currentTime);
+       
+// How the blocks know if they are past, present or future
+    $(".input").each(function () {
+        var scheduledTime = parseInt($(this).attr("id"));
+        console.log(scheduledTime);
+
+        if (currentTime > scheduledTime) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        } else if (currentTime < scheduledTime) {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+        } else {
+            $(this).removeClass("future");
+            $(this).removeClass("past");
+            $(this).addClass("present");
+        }
+    });
+}
+// Button functionality, .val() is where the text goes
+$(".completeBtn").click(function() {
+    eventText = $(this).siblings(".input").val($(this).css("text-decoration", "line-through"));
+    console.log(eventText);
+    eventTime = $(this).siblings(".hour").text();
+    console.log(eventTime);
+    localStorage.setItem(eventTime, JSON.stringify(eventText));
+
+    // colorChange ();
+    // renderText ();
+
+   });
+
+$(".saveBtn").click(function() {
+    eventText = $(this).siblings(".input").val();
+    console.log(eventText);
+    eventTime = $(this).siblings(".hour").text();
+    console.log(eventTime);
+    localStorage.setItem(eventTime, JSON.stringify(eventText));
+
+    // colorChange ();
+    // renderText ();
+    
+});
+
+    $(".deleteBtn").click(function() {
+        eventText = $(this).siblings(".input").val("");
+        eventText = $(this).siblings(".input").val();
+        eventTime = $(this).siblings(".hour").text();
+        localStorage.setItem(eventTime, JSON.stringify(eventText));
   
-    var button = document.createElement("button");
-    button.textContent = "Complete";
+    colorChange ();
+    renderText ();
 
-    li.appendChild(button);
-    todoList.appendChild(li);
-  }
-}
-
-function init() {
-  // Get stored todos from localStorage
-  // Parsing the JSON string to an object
-  var storedTodos = JSON.parse(localStorage.getItem("todos"));
-
-  // If todos were retrieved from localStorage, update the todos array to it
-  if (storedTodos !== null) {
-    todos = storedTodos;
-  }
-
-  // Render todos to the DOM
-  renderTodos();
-}
-
-function storeTodos() {
-  // Stringify and set "todos" key in localStorage to todos array
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
-
-// When form is submitted...
-todoForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  var todoText = todoInput.value.trim();
-
-  // Return from function early if submitted todoText is blank
-  if (todoText === "") {
-    return;
-  }
-
-  // Add new todoText to todos array, clear the input
-  todos.push(todoText);
-  todoInput.value = "";
-
-  // Store updated todos in localStorage, re-render the list
-  storeTodos();
-  renderTodos();
 });
 
-// When a element inside of the todoList is clicked...
-todoList.addEventListener("click", function(event) {
-  var element = event.target;
+    // Enter and Display Events
+function renderText () {   
+    var saveEventText8 = JSON.parse(localStorage.getItem("8:00 am"));
+    $("#8").val("");
+    $("#8").val(saveEventText8);
 
-  // If that element is a button...
-  if (element.matches("button") === true) {
-    // Get its data-index value and remove the todo element from the list
-    var index = element.parentElement.getAttribute("data-index");
-    todos.splice(index, 1);
+    var saveEventText9 = JSON.parse(localStorage.getItem("9:00 am"));
+    $("#9").val("");
+    $("#9").val(saveEventText9);
+    
+    var saveEventText10 = JSON.parse(localStorage.getItem("10:00 am"));
+    $("#10").val("");
+    $("#10").val(saveEventText10);
+    
+    var saveEventText11 = JSON.parse(localStorage.getItem("11:00 am"));
+    $("#11").val("");
+    $("#11").val(saveEventText11);
+    
+    var saveEventText12 = JSON.parse(localStorage.getItem("12:00 pm"));
+    $("#12").val("");
+    $("#12").val(saveEventText12);
+    
+    var saveEventText1 = JSON.parse(localStorage.getItem("1:00 pm"));
+    $("#13").val("");
+    $("#13").val(saveEventText1);
 
-    // Store updated todos in localStorage, re-render the list
-    storeTodos();
-    renderTodos();
-  }
-});
+    var saveEventText2 = JSON.parse(localStorage.getItem("2:00 pm"));
+    $("#14").val("");
+    $("#14").val(saveEventText2);
+
+    var saveEventText3 = JSON.parse(localStorage.getItem("3:00 pm"));
+    $("#15").val("");
+    $("#15").val(saveEventText3);
+
+    var saveEventText4 = JSON.parse(localStorage.getItem("4:00 pm"));
+    $("#16").val("");
+    $("#16").val(saveEventText4);
+
+    var saveEventText5 = JSON.parse(localStorage.getItem("5:00 pm"));
+    $("#17").val("");
+    $("#17").val(saveEventText5);
+
+    var saveEventText6 = JSON.parse(localStorage.getItem("6:00 pm"));
+    $("#18").val("");
+    $("#18").val(saveEventText6);
+
+    var saveEventText7 = JSON.parse(localStorage.getItem("7:00 pm"));
+    $("#19").val("");
+    $("#19").val(saveEventText7);
+
+    var saveEventText8P = JSON.parse(localStorage.getItem("8:00 pm"));
+    $("#20").val("");
+    $("#20").val(saveEventText8P);
+
+};

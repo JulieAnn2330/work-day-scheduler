@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -8,17 +8,21 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
+  color: black;
   border-left: 1px solid black;
   padding: 10px;
 }
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-color: slateblue;
+  color: white;
   border-radius: 0;
   border-bottom: 10px solid black;
+}
+
+h1 {
+    font-size: 20px;
 }
 
 .description{
@@ -39,102 +43,51 @@ textarea{
 .hour {
   background-color: #ffffff;
   color: #000000;
-  border-top: 1px dashed #000000;
+  border-top: 1px dashed black; 
+  border-bottom: 1px dashed black; 
+  border-left: 1px dashed black; 
+  padding: 10px;
 }
 
+/* Colors for past, present and future */
 .past {
-  background-color: #d3d3d3;
+  background-color: lightslategray;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
-  color: white;
+  background-color: aliceblue;
+  color: black;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: cornflowerblue;
   color: white;
 }
 
-.saveBtn {
+/* Button styling */
+.completeBtn, .saveBtn {
+  border-left: 1px solid black;
+  background-color: slateblue;
+  color: white;  
+}
+.deleteBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  background-color: slateblue;
   color: white;
 }
 
-.saveBtn i:hover {
+.saveBtn, .completeBtn, .deleteBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
 
-/* Start of styles pulled from activity */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.completeBtn {
+text-decoration: line-through;
 }
 
-/* body {
-  font-family: "Concert One", cursive;
-  font-size: 16px;
-} */
-
-input {
-  height: 50px;
-  width: 100%;
-  padding: 6px;
-  margin-top: 10px;
-  font-size: 2.4em;
-  border: none;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  background-color: white;
-}
-
-li {
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-  background-color: #ff5d88;
-  color:black;
-  font-size: 1.5em;
-  line-height: 1.5;
-}
-
-li:before {
-  content: "\200B";
-  position: absolute;
-}
-
-li::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-li button {
-  float: right;
-  border: none;
-  height: 40px;
-  cursor: pointer;
-  background-color: #ff9500;
-  color: black;
-  font-size: 1em;
-}
-
-li button:hover {
-  background-color: #febc5d;
-}
-
-.todos {
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 40px;
+.far {
+  font-size: 200%;
 }
