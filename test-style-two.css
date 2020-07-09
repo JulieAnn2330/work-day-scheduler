@@ -21,10 +21,9 @@ textarea{
   border-bottom: 10px solid black;
 }
 
-#datepicker {
-    color: white;
+h1 {
+    font-size: 20px;
 }
-
 
 .description{
   white-space: pre-wrap;
