@@ -25,7 +25,7 @@ function colorChange () {
     var currentTime = moment().hours();
     console.log("Current Time" + currentTime);
        
-// How the slots know if they are past, present or future
+// How the blocks know if they are past, present or future
     $(".input").each(function () {
         var scheduledTime = parseInt($(this).attr("id"));
         console.log(scheduledTime);
@@ -45,15 +45,15 @@ function colorChange () {
         }
     });
 }
-
-// Button functionality
+// Button functionality, .val() is where the text goes
 $(".completeBtn").click(function() {
-    eventText = $(this).siblings(".input").val();
+    eventText = $(this).siblings(".input").val($(this).css("text-decoration", "line-through"));
     console.log(eventText);
     eventTime = $(this).siblings(".hour").text();
     console.log(eventTime);
     localStorage.setItem(eventTime, JSON.stringify(eventText));
-});
+
+   });
 
 $(".saveBtn").click(function() {
     eventText = $(this).siblings(".input").val();
@@ -64,16 +64,16 @@ $(".saveBtn").click(function() {
 });
 
     $(".deleteBtn").click(function() {
-    eventText = $(this).siblings(".input").hide();
-    console.log(eventText);
-    eventTime = $(this).siblings(".hour").text();
-    console.log(eventTime);
-    localStorage.setItem(eventTime, JSON.stringify(eventText));
+        eventText = $(this).siblings(".input").val("");
+        eventText = $(this).siblings(".input").val();
+        eventTime = $(this).siblings(".hour").text();
+        localStorage.setItem(eventTime, JSON.stringify(eventText));
 
+  
     colorChange ();
     renderText ();
 
-    });
+});
 
     // Enter and Display Events
 function renderText () {
@@ -113,4 +113,4 @@ function renderText () {
     $("#17").val("");
     $("#17").val(saveEventText5);
 
-};
+}

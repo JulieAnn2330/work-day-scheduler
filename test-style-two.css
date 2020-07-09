@@ -85,6 +85,10 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
+.completeBtn {
+text-decoration: line-through;
+}
+
 .far {
   font-size: 200%;
 }
