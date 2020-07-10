@@ -2,8 +2,7 @@
 var m = moment();
 
 // variables for on save button click 
-var eventText;
-var eventTime;
+
 
 // Day, date, time
 $("#currentDay").text(moment().format('LLLL'));
@@ -44,6 +43,9 @@ function colorChange () {
     });
 }
 // Button functionality, .val() is where the text goes
+var eventText;
+var eventTime;
+
 $(".completeBtn").click(function() {
     eventText = $(this).siblings(".input").val($(this).css("text-decoration", "line-through"));
     console.log(eventText);

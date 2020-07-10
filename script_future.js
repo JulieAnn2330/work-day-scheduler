@@ -1,14 +1,8 @@
 // Moment script
 var m = moment();
 
-// variables for on save button click 
-var eventWords;
-var eventHours;
-
 // Day, date, time
 $("#currentDayPlusOne").text(moment().add(24, "hours").format('dddd, MMMM Do, YYYY'));
-
-
 
 $(document).ready( function() {
     changeColor ();
@@ -40,27 +34,30 @@ function changeColor () {
         }
     });
 }
-// Button functionality, .val() is where the text goes
+// Button functionality, variables for on save button click, .val() is where the text goes
+var eventWords;
+var eventHours;
+
 $(".completeBtn").click(function() {
     eventWords = $(this).siblings(".input").val($(this).css("text-decoration", "line-through"));
     console.log(eventText);
     eventHours = $(this).siblings(".hour").text();
     console.log(eventHours);
-    localStorage.setItem(eventHours, JSON.stringify(eventWords));
+    window.localStorage.setItem(eventHours, JSON.stringify(eventWords));
 
-    colorChange ();
+    changeColor ();
     renderText ();
 
    });
 
 $(".saveBtn").click(function() {
     eventWords = $(this).siblings(".input").val();
-    console.log(eventText);
+    console.log(eventWords);
     eventHours = $(this).siblings(".hour").text();
     console.log(eventHours);
-    localStorage.setItem(eventHours, JSON.stringify(eventWords));
+    window.localStorage.setItem(eventHours, JSON.stringify(eventWords));
 
-    colorChange ();
+    changeColor ();
     renderText ();
     
 });
@@ -69,9 +66,9 @@ $(".saveBtn").click(function() {
         eventWords = $(this).siblings(".input").val("");
         eventWords = $(this).siblings(".input").val();
         eventHours = $(this).siblings(".hour").text();
-        localStorage.setItem(eventHours, JSON.stringify(eventWords));
+        window.localStorage.setItem(eventHours, JSON.stringify(eventWords));
   
-    colorChange ();
+    changeColor ();
     renderText ();
 
 });
