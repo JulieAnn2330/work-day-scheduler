@@ -6,7 +6,7 @@ var eventWords;
 var eventHours;
 
 // Day, date, time
-$("#currentDayPlusOne").text(moment().add("days", 1).format('dddd, MMMM Do, YYYY'));
+$("#currentDayPlusOne").text(moment().add(24, "hours").format('dddd, MMMM Do, YYYY'));
 
 
 
@@ -17,26 +17,26 @@ $(document).ready( function() {
 
 function changeColor () {
     
-    var futureHour = moment().hours();
+    var futureHour = moment().add(24, "hours");
     console.log("Current Time" + futureHour);
        
 // How the blocks know if they are past, present or future
     $(".input").each(function () {
-        var scheduledHour = parseInt($(this).attr("id"));
-        console.log(scheduledHour);
+        var scheduledEvent = parseInt($(this).attr("id"));
+        console.log(scheduledEvent);
 
-        if (futureHour > scheduledHour) {
+        if (futureHour > futureHour) {
             $(this).removeClass("future");
             $(this).removeClass("present");
-            $(this).addClass("past");
-        } else if (futureHour < scheduledHour) {
+            $(this).removeClass("past");
+        } else if (futureHour == futureHour) {
             $(this).removeClass("present");
             $(this).removeClass("past");
             $(this).addClass("future");
         } else {
             $(this).removeClass("future");
             $(this).removeClass("past");
-            $(this).addClass("present");
+            $(this).removeClass("present");
         }
     });
 }

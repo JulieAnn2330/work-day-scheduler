@@ -51,8 +51,8 @@ $(".completeBtn").click(function() {
     console.log(eventTime);
     localStorage.setItem(eventTime, JSON.stringify(eventText));
 
-    // colorChange ();
-    // renderText ();
+    colorChange ();
+    renderText ();
 
    });
 
@@ -63,8 +63,8 @@ $(".saveBtn").click(function() {
     console.log(eventTime);
     localStorage.setItem(eventTime, JSON.stringify(eventText));
 
-    // colorChange ();
-    // renderText ();
+    colorChange ();
+    renderText ();
     
 });
 
