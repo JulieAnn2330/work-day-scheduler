@@ -1,3 +1,16 @@
+Deployed program: https://julieann2330.github.io/work-day-scheduler/
+
+Java Script Work Day Scheduler
+
+This is a homework assignment that I created for the University of Kansas Coding BootCamp. 
+
+This week we are building an online planning calendar. The calendar was supposed to show the hours from 9am to 5pm. I extended this from 8am - 8pm for further flexibility. I also added the ability to schedule for the next day. The calendar is intuitive, click in the box and add your text, the save button will save the text, even upon refresh or closing the browser and coming back. The complete button will strikethrough the item to mark it complete and the delete button will delete the item from the calendar completely. These last two buttons I added fonr convenience. The blocks of time will recognize if they are in the past, present or future and are color coded thusly. Everything on the next day's page is coded for future time.
+
+I utilized several coding websites for help, including StackOverflow and w3schools.com I also watched YouTube tutorials and got assistance from fellow student Aurora Brune.  
+
+The full details of the project are listed below.
+
+
 # 05 Third-Party APIs: Work Day Scheduler
 
 Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
