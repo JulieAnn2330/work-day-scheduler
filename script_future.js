@@ -38,18 +38,6 @@ function changeColor () {
 var eventWords;
 var eventHours;
 
-$(".completeBtn").click(function() {
-    eventWords = $(this).siblings(".input").val($(this).css("text-decoration", "line-through"));
-    console.log(eventText);
-    eventHours = $(this).siblings(".hour").text();
-    console.log(eventHours);
-    window.localStorage.setItem(eventHours, JSON.stringify(eventWords));
-
-    changeColor ();
-    renderText ();
-
-   });
-
 $(".saveBtn").click(function() {
     eventWords = $(this).siblings(".input").val();
     console.log(eventWords);

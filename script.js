@@ -41,6 +41,18 @@ function colorChange () {
 var eventText;
 var eventTime;
 
+$(".saveBtn").click(function() {
+    eventText = $(this).siblings(".input").val();
+    console.log(eventText);
+    eventTime = $(this).siblings(".hour").text();
+    console.log(eventTime);
+    localStorage.setItem(eventTime, JSON.stringify(eventText));
+
+    colorChange ();
+    renderText ();
+    
+});
+
 var buttonclicked;
 $(".completeBtn").click(function(){
 if( buttonclicked!= true ) {
@@ -50,18 +62,6 @@ if( buttonclicked!= true ) {
     console.log(eventTime);
     localStorage.setItem(eventTime, JSON.stringify(eventText));
 }
-    colorChange ();
-    renderText ();
-});
-   
-
-$(".saveBtn").click(function() {
-    eventText = $(this).siblings(".input").val();
-    console.log(eventText);
-    eventTime = $(this).siblings(".hour").text();
-    console.log(eventTime);
-    localStorage.setItem(eventTime, JSON.stringify(eventText));
-
     colorChange ();
     renderText ();
     
