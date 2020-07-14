@@ -1,17 +1,11 @@
 // Moment script
 var m = moment();
 
-// variables for on save button click 
-var eventText;
-var eventTime;
+// 
 
 // Day, date, time
 $("#currentDay").text(moment().format('LLLL'));
 
-// Change date
-var datepicker = new ej.calendars.DatePicker({ width: "255px" });
-
-datepicker.appendTo('#datepicker');
 
 $(document).ready( function() {
     colorChange ();
@@ -43,18 +37,9 @@ function colorChange () {
         }
     });
 }
-// Button functionality, .val() is where the text goes
-$(".completeBtn").click(function() {
-    eventText = $(this).siblings(".input").val($(this).css("text-decoration", "line-through"));
-    console.log(eventText);
-    eventTime = $(this).siblings(".hour").text();
-    console.log(eventTime);
-    localStorage.setItem(eventTime, JSON.stringify(eventText));
-
-    // colorChange ();
-    // renderText ();
-
-   });
+// Button functionality, variables for on save button click, .val() is where the text goes
+var eventText;
+var eventTime;
 
 $(".saveBtn").click(function() {
     eventText = $(this).siblings(".input").val();
@@ -63,12 +48,12 @@ $(".saveBtn").click(function() {
     console.log(eventTime);
     localStorage.setItem(eventTime, JSON.stringify(eventText));
 
-    // colorChange ();
-    // renderText ();
+    colorChange ();
+    renderText ();
     
 });
 
-    $(".deleteBtn").click(function() {
+  $(".deleteBtn").click(function() {
         eventText = $(this).siblings(".input").val("");
         eventText = $(this).siblings(".input").val();
         eventTime = $(this).siblings(".hour").text();

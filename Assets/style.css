@@ -84,8 +84,8 @@ h1 {
   transition: all .3s ease-in-out;
 }
 
-.completeBtn {
-text-decoration: line-through;
+.complete{
+text-decoration: line-through !important;
 }
 
 .far {
