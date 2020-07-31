@@ -1,6 +1,9 @@
+
+Work Day Scheduler
+
 Deployed program: https://julieann2330.github.io/work-day-scheduler/
 
-Java Script Work Day Scheduler
+Technologies Used: HTML, Bootstrap, CSS, JavaScript, moment.js, jQuery
 
 This is a homework assignment that I created for the University of Kansas Coding BootCamp. 
 
