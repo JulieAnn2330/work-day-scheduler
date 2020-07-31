@@ -8,6 +8,8 @@ This week we are building an online planning calendar. The calendar was supposed
 
 I utilized several coding websites for help, including StackOverflow and w3schools.com I also watched YouTube tutorials and got assistance from fellow student Aurora Brune.  
 
+![image](https://user-images.githubusercontent.com/64329660/89043869-bea97180-d30e-11ea-8611-24cf7787bfde.png)
+
 The full details of the project are listed below.
 
 
